@@ -33,6 +33,9 @@ public class ContaEstudantil extends Conta {
 		if(this.getSaldo() >= valor) {
 			this.saldo = this.getSaldo() - valor;
 			this.contador++;
+			
+			System.out.println("Saque realizado com sucesso!!");
+			System.out.println("R$ "+ this.getSaldo());
 		}
 		// aqui ele tenta debitar mas o valor que tem na conta e no limite estudantil é menor do q a conta q ele qr pagar(debito)
 		// VERIFICAR ESSA LOGICA
