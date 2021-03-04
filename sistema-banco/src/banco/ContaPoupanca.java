@@ -82,10 +82,11 @@ public class ContaPoupanca extends Conta {
 		
 		int opcao;
 		int valor = 0;
+		int i = 0;
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank");
-		System.out.println("Bom, Bonito e Barato");
+		System.out.println("Bom, Bonito e Barato.");
 		
 		System.out.println();
 		System.out.println("Seja Bem-Vindo a sua Conta Especial");
@@ -169,6 +170,18 @@ public class ContaPoupanca extends Conta {
 					System.out.println("Opcao invalida, tente novamente!");
 					System.out.println();
 				break;
+			}
+			
+			i++;
+			
+			if(i == this.getMovimento().length) {
+				opcao = '0';
+				
+				System.out.println("-----------------------------------------------");
+				System.out.println("Voce realizou o maximo de movimentacoes do dia!");
+				System.out.println("-----------------------------------------------");
+				System.out.println();
+				
 			}
 			
 		}while(opcao != '0');

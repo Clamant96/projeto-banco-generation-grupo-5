@@ -64,6 +64,17 @@ public class Banco {
 				case '2':
 					System.out.println("PERFIL | CONTA CORRENTE");
 					System.out.println();
+					
+					System.out.println("Cadastro: ");
+					System.out.print("CPF: ");
+					cpf = entradaDados.nextLine();
+					
+					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
+					aniversarioPoupanca = 30;
+					
+					ContaCorrente cc = new ContaCorrente(numero, cpf);
+					
+					cc.menuPerfil();
 				break;
 				
 				case '3':

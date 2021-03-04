@@ -10,7 +10,7 @@ public abstract class Conta {
 	protected double saldo;
 	private boolean ativa;
 	
-	private double[] movimento = new double[10];
+	private double[] movimento = new double[2];
 	
 	Random aleatorio = new Random();
 	
@@ -63,6 +63,10 @@ public abstract class Conta {
 	// Movimentos conta
 	public void setMovimento(double movimento[]) {
 		this.movimento = movimento;
+	}
+	
+	public double[] getMovimento() {
+		return this.movimento;
 	}
 	
 	public void credito(double creditar) {
