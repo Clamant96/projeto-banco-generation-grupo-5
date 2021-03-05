@@ -10,6 +10,14 @@ public class Banco {
 		
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
+		
+		//ContaEspecial ce = new ContaEspecial();
+		
+		/*ce.debito(50, ce.getLimite());
+		ce.setNumero(123456);
+		ce.credito(10);
+		ce.debito(50, ce.getLimite());
+		ce.credito(5);*/
 
 		int opcao;
 		int valor = 0;
@@ -40,10 +48,6 @@ public class Banco {
 			
 			switch(opcao) {
 				case '1':
-					/* ======================= */
-					/* PERFIL | CONTA POUPANCA */
-					/* ======================= */
-					
 					System.out.println("PERFIL | CONTA POUPANCA");
 					System.out.println();
 					
@@ -54,20 +58,21 @@ public class Banco {
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
 					aniversarioPoupanca = 30;
 					
-					/* =================================== */
-					/* INSTANCIA A CLASSE - CONTA POUPANCA */
-					/* =================================== */
-					
 					ContaPoupanca cp = new ContaPoupanca(numero, cpf, aniversarioPoupanca);
+					
+					//cp.menuPerfil();
+					
+					/* =================== */
+					
+					/*Random aleatorio = new Random();
+					Scanner entradaDados = new Scanner(System.in);*/
 					
 					opcaoPerfil = '0';
 					valor = 0;
 					cp.setContarMovimentacao(0);
+					/*int i = 0;*/
 					
-					/* ====================== */
-					/* MENU | PERFIL DE CONTA */
-					/* ====================== */
-					
+					// MENU | PERFIL DE CONTA
 					System.out.println("Ola, seja bem vindo ao BBBank");
 					System.out.println("Bom, Bonito e Barato.");
 					
@@ -126,10 +131,6 @@ public class Banco {
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
 								
-								/* ========================= */
-								/* CREDITA UM VALOR NA CONTA */
-								/* ========================= */
-								
 								cp.credito(valor);
 								
 								System.out.println();
@@ -142,10 +143,6 @@ public class Banco {
 								System.out.println("Quanto voce deseja sacar? ");
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
-								
-								/* ======================== */
-								/* DEBITA UM VALOR NA CONTA */
-								/* ======================== */
 								
 								cp.debito(valor);
 								
@@ -177,13 +174,10 @@ public class Banco {
 					
 					cp.listarMovimentacoesConta();
 					
+					/* =================== */
 				break;
 				
 				case '2':
-					/* ======================= */
-					/* PERFIL | CONTA CORRENTE */
-					/* ======================= */
-					
 					System.out.println("PERFIL | CONTA CORRENTE");
 					System.out.println();
 					
@@ -192,21 +186,24 @@ public class Banco {
 					cpf = entradaDados.nextLine();
 					
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
-					
-					/* =================================== */
-					/* INSTANCIA A CLASSE - CONTA CORRENTE */
-					/* =================================== */
+					//aniversarioPoupanca = 30;
 					
 					ContaCorrente cc = new ContaCorrente(numero, cpf);
 					
+					/*cc.menuPerfil();*/
+					
+					/* ==================== */
+					
+					/*Random aleatorio = new Random();
+					Scanner entradaDados = new Scanner(System.in);*/
+					
+					/*int opcao;
+					int valor = 0;*/
 					opcaoPerfil = '0';
 					valor = 0;
 					cc.setContarMovimentacao(0);
 					
-					/* ====================== */
-					/* MENU | PERFIL DE CONTA */
-					/* ====================== */
-					
+					// MENU | PERFIL DE CONTA
 					System.out.println("Ola, seja bem vindo ao BBBank - G5");
 					System.out.println("Bom, Bonito e Barato");
 					
@@ -282,10 +279,6 @@ public class Banco {
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
 								
-								/* ========================= */
-								/* CREDITA UM VALOR NA CONTA */
-								/* ========================= */
-								
 								cc.credito(valor);
 								
 								cc.gravarMovimentacaoCredito(cc.getContarMovimentacao(), cc.getSaldo(), valor);
@@ -302,10 +295,6 @@ public class Banco {
 								System.out.println("Quanto voce deseja sacar? ");
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
-								
-								/* ======================== */
-								/* DEBITA UM VALOR NA CONTA */
-								/* ======================== */
 								
 								cc.debito(valor);
 								
@@ -352,13 +341,10 @@ public class Banco {
 					
 					cc.listarMovimentacoesConta();
 					
+					/* ==================== */
 				break;
 				
 				case '3':
-					/* ======================= */
-					/* PERFIL | CONTA ESPECIAL */
-					/* ======================= */
-					
 					System.out.println("PERFIL | CONTA ESPECIAL");
 					System.out.println();
 					
@@ -368,20 +354,21 @@ public class Banco {
 					
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
 					
-					/* =================================== */
-					/* INSTANCIA A CLASSE - CONTA ESPECIAL */
-					/* =================================== */
-					
 					ContaEspecial ce = new ContaEspecial(numero, cpf);
+					
+					//ce.menuPerfil();
+					
+					/* ==================== */
+					
+					/*Random aleatorio = new Random();
+					Scanner entradaDados = new Scanner(System.in);*/
 					
 					opcaoPerfil = '0';
 					valor = 0;
 					ce.setContarMovimentacao(0);
+					/*int i = 0;*/
 					
-					/* ====================== */
-					/* MENU | PERFIL DE CONTA */
-					/* ====================== */
-					
+					// MENU | PERFIL DE CONTA
 					System.out.println("Ola, seja bem vindo ao BBBank - G5");
 					System.out.println("Bom, Bonito e Barato.");
 					
@@ -429,10 +416,6 @@ public class Banco {
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
 								
-								/* ========================= */
-								/* CREDITA UM VALOR NA CONTA */
-								/* ========================= */
-								
 								ce.credito(valor);
 								
 								ce.gravarMovimentacaoCredito(ce.getContarMovimentacao(), ce.getSaldo(), valor);
@@ -449,10 +432,6 @@ public class Banco {
 								System.out.println("Quanto voce deseja sacar? ");
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
-								
-								/* ======================== */
-								/* DEBITA UM VALOR NA CONTA */
-								/* ======================== */
 								
 								ce.debito(valor, ce.getLimite());
 								
@@ -484,13 +463,96 @@ public class Banco {
 					
 					ce.listarMovimentacoesConta();
 					
+					/* ==================== */
+					
+					/*System.out.println("Cadastro: ");
+					System.out.print("CPF: ");
+					ce.setCpf(entradaDados.nextLine());
+					
+					ce.gerarNumero();
+					System.out.println("Numero Conta: "+ ce.getNumero());
+					System.out.println();
+					
+					// MENU | PERFIL DE CONTA
+					System.out.println("Ola, seja bem vindo ao Connect Banck.");
+					System.out.println("Encurtando distancias entre seus objetivos.");
+					
+					System.out.println();
+					System.out.println("Seja Bem-Vindo a sua Conta Especial");
+					System.out.println("Numero Conta: "+ ce.getNumero());
+					
+					do {
+						System.out.println("1 | VERIFICAR SALDO");
+						System.out.println("2 | VERIFICAR DADOS CADASTRAIS");
+						System.out.println("3 | CREDITAR");
+						System.out.println("4 | DEBITAR");
+						System.out.println("0 | LOGOUT");
+						
+						System.out.print("==> "); 
+						opcao = entradaDados.next().charAt(0);
+						entradaDados.nextLine();
+						
+						switch(opcao) {
+							case '1':
+								System.out.println("MENU | VERIFICAR SALDO");
+								System.out.println();
+								
+								System.out.println("Saldo Conta: "+ ce.getSaldo());
+								System.out.println("Limite de Credito: "+ ce.getLimite());
+								System.out.println();
+							break;
+							
+							case '2':
+								System.out.println("MENU | MEU DADOS");
+								System.out.println();
+								
+								System.out.println("Conta: "+ ce.getNumero());
+								System.out.println("CPF: "+ ce.getCpf());
+								System.out.println("Saldo Conta: "+ ce.getSaldo());
+								System.out.println("Limite de Credito: "+ ce.getLimite());
+								System.out.println();
+							break;
+							
+							case '3':
+								System.out.println("MENU | CREDITAR");
+								System.out.println();
+								
+								System.out.println("Quanto voce deseja depositar? ");
+								System.out.print("R$ ");
+								valor = entradaDados.nextInt();
+								
+								ce.credito(valor);
+								System.out.println();
+							break;
+							
+							case '4':
+								System.out.println("MENU | DEBITAR");
+								System.out.println();
+								
+								System.out.println("Quanto voce deseja sacar? ");
+								System.out.print("R$ ");
+								valor = entradaDados.nextInt();
+								
+								ce.debito(valor, ce.getLimite());
+								System.out.println();
+							break;
+							
+							case '0':
+								System.out.println("LOGOUT");
+								System.out.println();
+							break;
+							
+							default:
+								System.out.println("Opcao invalida, tente novamente!");
+								System.out.println();
+							break;
+						}
+						
+					}while(opcao != '0');*/
+					
 				break;
 					
 				case '4':
-					/* ======================= */
-					/* PERFIL | CONTA EMPRESA  */
-					/* ======================= */
-					
 					System.out.println("PERFIL | CONTA EMPRESA");
 					System.out.println();
 					
@@ -501,20 +563,22 @@ public class Banco {
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
 					emprestimo = 10000;
 					
-					/* ================================== */
-					/* INSTANCIA A CLASSE - CONTA EMPRESA */
-					/* ================================== */
-					
 					ContaEmpresa co = new ContaEmpresa(numero, cpf, emprestimo);
 					
+					//co.menuPerfil();
+					
+					/* ============== */
+					
+					/*Random aleatorio = new Random();
+					Scanner entradaDados = new Scanner(System.in);*/
+					
+					/*int opcao;
+					int valor = 0;*/
 					opcaoPerfil = '0';
 					valor = 0;
 					co.setContarMovimentacao(0);
 					
-					/* ====================== */
-					/* MENU | PERFIL DE CONTA */
-					/* ====================== */
-					
+					// MENU | PERFIL DE CONTA
 					System.out.println("Ola, seja bem vindo ao BBBank - G5");
 					System.out.println("Bom, Bonito e Barato.");
 					
@@ -572,10 +636,6 @@ public class Banco {
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
 								
-								/* ========================= */
-								/* CREDITA UM VALOR NA CONTA */
-								/* ========================= */
-								
 								co.credito(valor);
 								
 								co.gravarMovimentacaoCredito(co.getContarMovimentacao(), co.getSaldo(), valor);
@@ -592,10 +652,6 @@ public class Banco {
 								System.out.println("Quanto voce deseja sacar? ");
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
-								
-								/* ======================== */
-								/* DEBITA UM VALOR NA CONTA */
-								/* ======================== */
 								
 								co.debito(valor);
 								
@@ -627,13 +683,11 @@ public class Banco {
 					
 					co.listarMovimentacoesConta();
 					
+					/* ============== */
+					
 				break;
 					
 				case '5':
-					/* ========================= */
-					/* PERFIL | CONTA ESTUDANTIL */
-					/* ========================= */
-					
 					System.out.println("PERFIL | CONTA ESTUDANTIL");
 					System.out.println();
 					
@@ -643,20 +697,21 @@ public class Banco {
 					
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
 					
-					/* ===================================== */
-					/* INSTANCIA A CLASSE - CONTA ESTUDANTIL */
-					/* ===================================== */
-					
 					ContaEstudantil ca = new ContaEstudantil(numero, cpf);
+					
+					//ca.menuPerfil();
+					
+					/* ================= */
+					
+					/*Random aleatorio = new Random();
+					Scanner entradaDados = new Scanner(System.in);*/
 					
 					opcaoPerfil = '0';
 					valor = 0;
 					ca.setContarMovimentacao(0);
+					/*int i = 0;*/
 					
-					/* ====================== */
-					/* MENU | PERFIL DE CONTA */
-					/* ====================== */
-					
+					// MENU | PERFIL DE CONTA
 					System.out.println("Ola, seja bem vindo ao BBBank - G5");
 					System.out.println("Bom, Bonito e Barato.");
 					
@@ -703,10 +758,6 @@ public class Banco {
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
 								
-								/* ========================= */
-								/* CREDITA UM VALOR NA CONTA */
-								/* ========================= */
-								
 								ca.credito(valor);
 								
 								ca.gravarMovimentacaoCredito(ca.getContarMovimentacao(), ca.getSaldo(), valor);
@@ -723,10 +774,6 @@ public class Banco {
 								System.out.println("Quanto voce deseja sacar? ");
 								System.out.print("R$ ");
 								valor = entradaDados.nextInt();
-								
-								/* ======================== */
-								/* DEBITA UM VALOR NA CONTA */
-								/* ======================== */
 								
 								ca.debito(valor);
 								
@@ -758,6 +805,7 @@ public class Banco {
 					
 					ca.listarMovimentacoesConta();
 					
+					/* ================= */
 				break;
 					
 				case '0':

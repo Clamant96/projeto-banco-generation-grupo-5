@@ -1,5 +1,6 @@
 package banco;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class ContaEstudantil extends Conta {
@@ -7,6 +8,7 @@ public class ContaEstudantil extends Conta {
 	int contador = 0;
 	int opcao = 0;
 	double limiteEstudantil = 5000;
+	//int i = 0;
 	
 	Scanner leia = new Scanner(System.in);
 	
@@ -106,4 +108,126 @@ public class ContaEstudantil extends Conta {
 					}
 			}
 	}
+	
+	/*@Override
+	public void menuPerfil() {
+		Random aleatorio = new Random();
+		Scanner entradaDados = new Scanner(System.in);
+		
+		int opcao;
+		int valor = 0;
+		//int i = 0;
+		
+		// MENU | PERFIL DE CONTA
+		System.out.println("Ola, seja bem vindo ao BBBank - G5");
+		System.out.println("Bom, Bonito e Barato.");
+		
+		System.out.println();
+		System.out.println("Seja Bem-Vindo a sua Conta Estudantil");
+		System.out.println("Numero Conta: "+ this.getNumero());
+		
+		do {
+			System.out.println("1 | VERIFICAR SALDO");
+			System.out.println("2 | VERIFICAR DADOS CADASTRAIS");
+			System.out.println("3 | CREDITAR");
+			System.out.println("4 | DEBITAR");
+			System.out.println("0 | LOGOUT");
+			
+			System.out.print("==> "); 
+			opcao = entradaDados.next().charAt(0);
+			entradaDados.nextLine();
+			
+			switch(opcao) {
+				case '1':
+					System.out.println("MENU | VERIFICAR SALDO");
+					System.out.println();
+					
+					System.out.println("Saldo Conta: "+ this.getSaldo());
+					//System.out.println("Limite de Credito: "+ this.getLimite());
+					System.out.println();
+				break;
+				
+				case '2':
+					System.out.println("MENU | MEU DADOS");
+					System.out.println();
+					
+					System.out.println("Conta: "+ this.getNumero());
+					System.out.println("CPF: "+ this.getCpf());
+					System.out.println("Saldo Conta: "+ this.getSaldo());
+					System.out.println("Limite de Credito: "+ this.getLimiteEstudantil());
+					System.out.println();
+				break;
+				
+				case '3':
+					System.out.println("MENU | CREDITAR");
+					System.out.println();
+					
+					System.out.println("Quanto voce deseja depositar? ");
+					System.out.print("R$ ");
+					valor = entradaDados.nextInt();
+					
+					this.credito(valor);
+					
+					//this.gravarMovimentacaoConta(i, this.getSaldo());
+					
+					this.gravarMovimentacaoCredito(i, this.getSaldo(), valor);
+					
+					i++;
+					
+					System.out.println();
+				break;
+				
+				case '4':
+					System.out.println("MENU | DEBITAR");
+					System.out.println();
+					
+					System.out.println("Quanto voce deseja sacar? ");
+					System.out.print("R$ ");
+					valor = entradaDados.nextInt();
+					
+					this.debito(valor);
+					
+					//this.gravarMovimentacaoConta(i, this.getSaldo());
+					
+					//this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
+					
+					//i++;
+					
+					System.out.println();
+				break;
+				
+				case '0':
+					System.out.println("LOGOUT");
+					System.out.println();
+				break;
+				
+				default:
+					System.out.println("Opcao invalida, tente novamente!");
+					System.out.println();
+				break;
+			}
+			
+			//i++;
+			
+			if(i == this.getMovimento().length) {
+				opcao = '0';
+				
+				System.out.println("-----------------------------------------------");
+				System.out.println("Voce realizou o maximo de movimentacoes do dia!");
+				System.out.println("-----------------------------------------------");
+				System.out.println();
+				
+			}
+			
+		}while(opcao != '0');
+		
+		//System.out.println("Movimentacao Mensal");
+		//for(int j = 0; j < this.getMovimento().length; j++) {
+		//	System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
+		//	System.out.println();
+		//}
+		
+		this.listarMovimentacoesConta();
+	
+	}*/
 }
