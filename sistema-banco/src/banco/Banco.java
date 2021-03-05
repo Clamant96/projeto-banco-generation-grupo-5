@@ -274,7 +274,7 @@ public class Banco {
 				                    	
 				                    }
 				                	
-				                } while(opcaoPerfil != 'S' && opcao != 'N');
+				                } while(opcaoPerfil != 'S' && opcaoPerfil != 'N');
 				                
 				                System.out.println();
 							break;
