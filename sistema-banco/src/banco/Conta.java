@@ -11,7 +11,7 @@ public abstract class Conta {
 	protected double saldo;
 	private boolean ativa;
 	
-	private String[] movimento = new String[2];
+	private String[] movimento = new String[10];
 	
 	Random aleatorio = new Random();
 	
