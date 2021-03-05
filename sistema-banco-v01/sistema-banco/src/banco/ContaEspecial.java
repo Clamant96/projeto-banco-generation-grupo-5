@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class ContaEspecial extends Conta{
 	private double limite;
-	int i = 0;
 
 	public ContaEspecial() {
 		this.setLimite(1000);
@@ -50,20 +49,12 @@ public class ContaEspecial extends Conta{
 			System.out.printf("Saldo limite R$ %.2f", this.getLimite());
 			System.out.println();
 			
-			this.gravarMovimentacaoDebito(i, this.getSaldo(), debitar, this.getLimite());
-			
-			i++;
-			
 		}else if(debitar <= limite) {
 			System.out.printf("Saque de R$ %.2f realizado com sucesso!! \n", debitar);
 			
 			System.out.println();
 			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
 			System.out.printf("Saldo limite R$ %.2f", this.getLimite());
-			
-			this.gravarMovimentacaoDebito(i, this.getSaldo(), debitar);
-			
-			i++;
 			
 		}
 		
@@ -75,7 +66,7 @@ public class ContaEspecial extends Conta{
 		
 		int opcao;
 		int valor = 0;
-		/*int i = 0;*/
+		int i = 0;
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank - G5");
@@ -126,13 +117,6 @@ public class ContaEspecial extends Conta{
 					valor = entradaDados.nextInt();
 					
 					this.credito(valor);
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					this.gravarMovimentacaoCredito(i, this.getSaldo(), valor);
-					
-					i++;
-					
 					System.out.println();
 				break;
 				
@@ -145,13 +129,6 @@ public class ContaEspecial extends Conta{
 					valor = entradaDados.nextInt();
 					
 					this.debito(valor, this.getLimite());
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
-					
-					i++;*/
-					
 					System.out.println();
 				break;
 				
@@ -166,7 +143,7 @@ public class ContaEspecial extends Conta{
 				break;
 			}
 			
-			//i++;
+			i++;
 			
 			if(i == this.getMovimento().length) {
 				opcao = '0';
@@ -179,14 +156,6 @@ public class ContaEspecial extends Conta{
 			}
 			
 		}while(opcao != '0');
-		
-		/*System.out.println("Movimentacao Mensal");
-		for(int j = 0; j < this.getMovimento().length; j++) {
-			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-			System.out.println();
-		}*/
-		
-		this.listarMovimentacoesConta();
 	}
 	
 }

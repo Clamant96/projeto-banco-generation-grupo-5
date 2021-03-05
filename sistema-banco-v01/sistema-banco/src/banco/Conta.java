@@ -1,6 +1,5 @@
 package banco;
 
-import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,7 +10,7 @@ public abstract class Conta {
 	protected double saldo;
 	private boolean ativa;
 	
-	private String[] movimento = new String[2];
+	private double[] movimento = new double[2];
 	
 	Random aleatorio = new Random();
 	
@@ -62,11 +61,11 @@ public abstract class Conta {
 	}
 	
 	// Movimentos conta
-	public void setMovimento(String movimento[]) {
+	public void setMovimento(double movimento[]) {
 		this.movimento = movimento;
 	}
 	
-	public String[] getMovimento() {
+	public double[] getMovimento() {
 		return this.movimento;
 	}
 	
@@ -227,32 +226,5 @@ public abstract class Conta {
 			
 		}while(opcao != '0');
 	
-	}
-	
-	/*public void gravarMovimentacaoConta(int i, double valor) {
-		this.movimento[i] = Double.toString(valor);
-	}*/
-	
-	public void gravarMovimentacaoCredito(int i, double saldo, double credito) {
-		this.movimento[i] = "(+)Credito R$ "+ Double.toString(credito) +" Saldo R$ "+ Double.toString(Math.round(saldo));
-	}
-	
-	public void gravarMovimentacaoDebito(int i, double saldo, double debito) {
-		this.movimento[i] = "(-)Debito R$ "+ Double.toString(debito) +" Saldo R$ "+ Double.toString(Math.round(saldo));
-	}
-	
-	public void gravarMovimentacaoDebito(int i, double saldo, double debito, double limite) {
-		this.movimento[i] = "(-)Debito R$ "+ Double.toString(debito) +" Saldo R$ "+ Double.toString(Math.round(saldo)) +" Limite R$ "+ Double.toString(Math.round(limite));
-	}
-	
-	public void listarMovimentacoesConta() {
-		System.out.println();
-		System.out.println("Movimentacao Mensal");
-		
-		for(int j = 0; j < this.getMovimento().length; j++) {
-			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-			System.out.println();
-		}
-		System.out.println();
 	}
 }

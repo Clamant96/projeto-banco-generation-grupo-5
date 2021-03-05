@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class ContaCorrente extends Conta{
 	int contadorTalao;
-	int i = 0;
 	
 	public ContaCorrente() {	
 		this.setContadorTalao(0);
@@ -40,41 +39,20 @@ public class ContaCorrente extends Conta{
         }
     }
 	
-	
-	@Override
-	public void debito(double debitar) {
-		if(debitar <= this.getSaldo()) {
-			this.saldo = this.getSaldo() - debitar;
-			System.out.printf("Saque de R$ %.2f realizado com sucesso!! \n", debitar);
-			
-			System.out.println();
-			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
-			System.out.println();
-			
-			this.gravarMovimentacaoDebito(i, this.getSaldo(), debitar);
-			
-			i++;
-			
-		}else {
-			System.out.printf("O valor R$ %f que voce deseja sacar e invalido\n", debitar);
-			System.out.println();
-		}
-	}
-
 	public void menuPerfil() {
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
 		
 		int opcao;
 		int valor = 0;
-		/*int i = 0;*/
+		int i = 0;
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank - G5");
 		System.out.println("Bom, Bonito e Barato");
 		
 		System.out.println();
-		System.out.println("Seja Bem-Vindo a sua Conta Corrente");
+		System.out.println("Seja Bem-Vindo a sua Conta Especial");
 		System.out.println("Numero Conta: "+ this.getNumero());
 		
 		do {
@@ -89,7 +67,7 @@ public class ContaCorrente extends Conta{
 			opcao = entradaDados.next().charAt(0);
 			entradaDados.nextLine();
 			
-			//System.out.println("O valor da posicao e: "+ (i + 1));
+			System.out.println("O valor da posicao e: "+ (i + 1));
 			
 			switch(opcao) {
 				case '1':
@@ -121,7 +99,7 @@ public class ContaCorrente extends Conta{
 	                    opcao = entradaDados.next().toUpperCase().charAt(0);
 	                    
 	                    System.out.println();
-	                    //System.out.println("Valor de opcao: "+ opcao);
+	                    System.out.println("Valor de opcao: "+ opcao);
 	                    
 	                    if(opcao != 'S' && opcao != 'N'){ 
 	                    	System.out.println("Opcao invalida!");
@@ -149,13 +127,6 @@ public class ContaCorrente extends Conta{
 					valor = entradaDados.nextInt();
 					
 					this.credito(valor);
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					this.gravarMovimentacaoCredito(i, this.getSaldo(), valor);
-					
-					i++;
-					
 					System.out.println();
 				break;
 				
@@ -167,14 +138,7 @@ public class ContaCorrente extends Conta{
 					System.out.print("R$ ");
 					valor = entradaDados.nextInt();
 					
-					this.debito(valor);
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
-					
-					i++;*/
-					
+					//this.debito(valor, this.getLimite());
 					System.out.println();
 				break;
 				
@@ -189,7 +153,7 @@ public class ContaCorrente extends Conta{
 				break;
 			}
 			
-			//i++;
+			i++;
 			
 			if(i == this.getMovimento().length) {
 				opcao = '0';
@@ -217,14 +181,6 @@ public class ContaCorrente extends Conta{
             }
     		
     	} while(opcao != 'N');
-		
-		/*System.out.println("Movimentacao Mensal");
-		for(int j = 0; j < this.getMovimento().length; j++) {
-			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-			System.out.println();
-		}*/
-		
-		this.listarMovimentacoesConta();
 	
 	}
 }

@@ -25,7 +25,6 @@ public class Banco {
 		String cpf;
 		int numero;
 		int aniversarioPoupanca;
-		double emprestimo;
 		
 		do {
 			System.out.println("Ola, seja bem vindo ao Connect Banck.");
@@ -71,7 +70,7 @@ public class Banco {
 					cpf = entradaDados.nextLine();
 					
 					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
-					//aniversarioPoupanca = 30;
+					aniversarioPoupanca = 30;
 					
 					ContaCorrente cc = new ContaCorrente(numero, cpf);
 					
@@ -182,17 +181,6 @@ public class Banco {
 				case '4':
 					System.out.println("PERFIL | CONTA EMPRESA");
 					System.out.println();
-					
-					System.out.println("Cadastro: ");
-					System.out.print("CPF: ");
-					cpf = entradaDados.nextLine();
-					
-					numero = aleatorio.nextInt((999999 - 111111) + 1) + 111111;
-					emprestimo = 10000;
-					
-					ContaEmpresa co = new ContaEmpresa(numero, cpf, emprestimo);
-					
-					co.menuPerfil();
 				break;
 					
 				case '5':

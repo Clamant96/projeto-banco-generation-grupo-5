@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class ContaPoupanca extends Conta {
 	private int aniversarioPoupanca;
-	int i = 0;
 	
 	public ContaPoupanca() {
 	}
@@ -62,10 +61,6 @@ public class ContaPoupanca extends Conta {
 		System.out.println("Valor depositado com sucesso!");
 		System.out.println("Saldo Atual: "+ this.getSaldo());
 		
-		this.gravarMovimentacaoCredito(i, this.getSaldo(), valor);
-		
-		i++;
-		
 	}
 	
 	public void debito(double valor) {
@@ -74,10 +69,6 @@ public class ContaPoupanca extends Conta {
 			
 			System.out.println("Valor debitado com sucesso!");
 			System.out.println("Saldo Atual R$ "+ this.getSaldo());
-			
-			this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
-			
-			i++;
 				
 		}else {
 			System.out.printf("O valor R$ %.2f e maior do que voce tem em conta!", valor);
@@ -91,14 +82,14 @@ public class ContaPoupanca extends Conta {
 		
 		int opcao;
 		int valor = 0;
-		/*int i = 0;*/
+		int i = 0;
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank");
 		System.out.println("Bom, Bonito e Barato.");
 		
 		System.out.println();
-		System.out.println("Seja Bem-Vindo a sua Conta Poupança");
+		System.out.println("Seja Bem-Vindo a sua Conta Especial");
 		System.out.println("Numero Conta: "+ this.getNumero());
 		
 		do {
@@ -155,13 +146,6 @@ public class ContaPoupanca extends Conta {
 					valor = entradaDados.nextInt();
 					
 					this.credito(valor);
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					/*this.gravarMovimentacaoCredito(i, this.getSaldo(), valor);
-					
-					i++;*/
-					
 					System.out.println();
 				break;
 				
@@ -174,13 +158,6 @@ public class ContaPoupanca extends Conta {
 					valor = entradaDados.nextInt();
 					
 					this.debito(valor);
-					
-					//this.gravarMovimentacaoConta(i, this.getSaldo());
-					
-					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
-					
-					i++;*/
-					
 					System.out.println();
 				break;
 				
@@ -195,7 +172,7 @@ public class ContaPoupanca extends Conta {
 				break;
 			}
 			
-			//i++;
+			i++;
 			
 			if(i == this.getMovimento().length) {
 				opcao = '0';
@@ -208,14 +185,6 @@ public class ContaPoupanca extends Conta {
 			}
 			
 		}while(opcao != '0');
-		
-		/*System.out.println("Movimentacao Mensal");
-		for(int j = 0; j < this.getMovimento().length; j++) {
-			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-			System.out.println();
-		}*/
-		
-		this.listarMovimentacoesConta();
 	
 	}
 }
