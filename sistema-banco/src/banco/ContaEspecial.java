@@ -42,6 +42,7 @@ public class ContaEspecial extends Conta{
 			System.out.println();
 			
 			this.ajusteSaldo(0);
+			
 			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
 			System.out.printf("Saldo limite R$ %.2f", this.getLimite());
 			System.out.println();

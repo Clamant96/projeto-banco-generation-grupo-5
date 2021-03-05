@@ -187,8 +187,11 @@ public abstract class Conta {
 		System.out.println("Movimentacao Mensal");
 		
 		for(int j = 0; j < this.getMovimento().length; j++) {
-			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-			System.out.println();
+			if(this.getMovimento()[j] != null) {
+				System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
+				System.out.println();
+			}
+			
 		}
 		System.out.println();
 	}

@@ -109,26 +109,29 @@ public class ContaEmpresa extends Conta {
 				if (opcao =='S'){
 						
 					
-						if (this.getEmprestimo() <=0 ) {
+						if (this.getEmprestimo() <= 0 ) {
 							System.out.println("TRANSAÇÃO NEGADA.");
+						
 						}
+						else {
+							System.out.print("\nDigite o valor que deseja de emprestimo: ");
+							valorEmprestimo = ler.nextDouble();
 						
-						System.out.print("\nDigite o valor que deseja de emprestimo: ");
-						valorEmprestimo = ler.nextDouble();
-					
-						
-			        	this.setEmprestimo(this.getEmprestimo()-valorEmprestimo);
-			        	
-			        	this.saldo = this.saldo+valorEmprestimo;
-			        	
-						System.out.println("\nEmprestimo realizado com sucesso.");
-			        	System.out.printf("\nSaldo atual : R$ %.2f ", this.getSaldo());
-			        	//Aparece esse saldo ?System.out.printf("\nEmprestimo saldo: R$ %.2f ",emprestimo);
-			        	System.out.println();
-			        	
-			        	this.gravarMovimentacaoCredito(this.getContarMovimentacao(), this.getSaldo(), this.getValorEmprestimo(), this.getEmprestimo());
-						
-						this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+							
+				        	this.setEmprestimo(this.getEmprestimo()-valorEmprestimo);
+				        	
+				        	this.saldo = this.saldo+valorEmprestimo;
+				        	
+							System.out.println("\nEmprestimo realizado com sucesso.");
+				        	System.out.printf("\nSaldo atual : R$ %.2f ", this.getSaldo());
+				        	//Aparece esse saldo ?System.out.printf("\nEmprestimo saldo: R$ %.2f ",emprestimo);
+				        	System.out.println();
+				        	
+				        	this.gravarMovimentacaoCredito(this.getContarMovimentacao(), this.getSaldo(), this.getValorEmprestimo(), this.getEmprestimo());
+							
+							this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+							
+						}
 			 
 			        }
 			       
