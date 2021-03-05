@@ -10,9 +10,8 @@ public abstract class Conta {
 	//depois alterar para private
 	protected double saldo;
 	private boolean ativa;
-	private int contarMovimentacao = 0;
 	
-	private String[] movimento = new String[2];
+	private String[] movimento = new String[10];
 	
 	Random aleatorio = new Random();
 	
@@ -69,14 +68,6 @@ public abstract class Conta {
 	
 	public String[] getMovimento() {
 		return this.movimento;
-	}
-	
-	public void setContarMovimentacao(int contarMovimentacao) {
-		this.contarMovimentacao = contarMovimentacao;
-	}
-	
-	public int getContarMovimentacao() {
-		return this.contarMovimentacao;
 	}
 	
 	public void credito(double creditar) {
@@ -244,10 +235,6 @@ public abstract class Conta {
 	
 	public void gravarMovimentacaoCredito(int i, double saldo, double credito) {
 		this.movimento[i] = "(+)Credito R$ "+ Double.toString(credito) +" Saldo R$ "+ Double.toString(Math.round(saldo));
-	}
-	
-	public void gravarMovimentacaoCredito(int i, double saldo, double credito, double limite) {
-		this.movimento[i] = "(+)Credito R$ "+ Double.toString(credito) +" Saldo R$ "+ Double.toString(Math.round(saldo)) +" Limite R$ "+ Double.toString(Math.round(limite));
 	}
 	
 	public void gravarMovimentacaoDebito(int i, double saldo, double debito) {

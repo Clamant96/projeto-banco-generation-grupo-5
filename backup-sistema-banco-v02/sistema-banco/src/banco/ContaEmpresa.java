@@ -8,7 +8,7 @@ public class ContaEmpresa extends Conta {
 	private double valorEmprestimo=0;
 	private int op;
 	private char opcao;
-	//int i = 0;
+	int i = 0;
 	
 	Scanner ler = new Scanner(System.in); 
 	
@@ -82,9 +82,9 @@ public class ContaEmpresa extends Conta {
 			System.out.printf("\nSaldo atual R$ %.2f ", this.getSaldo());
 			System.out.println("\n---------------------------------");
 			
-			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor);
+			this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
 			
-			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+			i++;
 			
 		}
 		
@@ -127,9 +127,9 @@ public class ContaEmpresa extends Conta {
 			        	//Aparece esse saldo ?System.out.printf("\nEmprestimo saldo: R$ %.2f ",emprestimo);
 			        	System.out.println();
 			        	
-			        	this.gravarMovimentacaoCredito(this.getContarMovimentacao(), this.getSaldo(), this.getValorEmprestimo(), this.getEmprestimo());
+			        	this.gravarMovimentacaoDebito(i, this.getSaldo(), this.getValorEmprestimo(), this.getEmprestimo());
 						
-						this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+						i++;
 			 
 			        }
 			       
@@ -141,14 +141,14 @@ public class ContaEmpresa extends Conta {
 
 	}
 	
-	/*@Override
+	@Override
 	public void menuPerfil() {
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
 		
 		int opcao;
 		int valor = 0;
-		int i = 0;
+		/*int i = 0;*/
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank - G5");
@@ -232,9 +232,9 @@ public class ContaEmpresa extends Conta {
 					
 					//this.gravarMovimentacaoConta(i, this.getSaldo());
 					
-					//this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
+					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
 					
-					//i++;
+					i++;*/
 					
 					System.out.println();
 				break;
@@ -264,14 +264,14 @@ public class ContaEmpresa extends Conta {
 			
 		}while(opcao != '0');
 		
-		System.out.println("Movimentacao Mensal");
+		/*System.out.println("Movimentacao Mensal");
 		for(int j = 0; j < this.getMovimento().length; j++) {
 			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
 			System.out.println();
-		}
+		}*/
 		
 		this.listarMovimentacoesConta();
 	
-	}*/
+	}
 	
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ContaCorrente extends Conta{
 	int contadorTalao;
-	/*int i = 0;*/
+	int i = 0;
 	
 	public ContaCorrente() {	
 		this.setContadorTalao(0);
@@ -51,10 +51,9 @@ public class ContaCorrente extends Conta{
 			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
 			System.out.println();
 			
-			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), debitar);
+			this.gravarMovimentacaoDebito(i, this.getSaldo(), debitar);
 			
-			//i++;
-			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+			i++;
 			
 		}else {
 			System.out.printf("O valor R$ %f que voce deseja sacar e invalido\n", debitar);
@@ -62,12 +61,13 @@ public class ContaCorrente extends Conta{
 		}
 	}
 
-	/*public void menuPerfil() {
+	public void menuPerfil() {
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
 		
 		int opcao;
 		int valor = 0;
+		/*int i = 0;*/
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank - G5");
@@ -173,7 +173,7 @@ public class ContaCorrente extends Conta{
 					
 					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
 					
-					i++;
+					i++;*/
 					
 					System.out.println();
 				break;
@@ -218,13 +218,13 @@ public class ContaCorrente extends Conta{
     		
     	} while(opcao != 'N');
 		
-		System.out.println("Movimentacao Mensal");
+		/*System.out.println("Movimentacao Mensal");
 		for(int j = 0; j < this.getMovimento().length; j++) {
 			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
 			System.out.println();
-		}
+		}*/
 		
 		this.listarMovimentacoesConta();
 	
-	}*/
+	}
 }

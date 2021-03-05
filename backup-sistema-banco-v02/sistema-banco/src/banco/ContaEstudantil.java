@@ -8,7 +8,7 @@ public class ContaEstudantil extends Conta {
 	int contador = 0;
 	int opcao = 0;
 	double limiteEstudantil = 5000;
-	//int i = 0;
+	int i = 0;
 	
 	Scanner leia = new Scanner(System.in);
 	
@@ -38,9 +38,9 @@ public class ContaEstudantil extends Conta {
 			System.out.println("Saque realizado com sucesso!!");
 			System.out.println("R$ "+ this.getSaldo());
 			
-			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor);
+			this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
 			
-			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+			i++;
 		}
 		// aqui ele tenta debitar mas o valor que tem na conta e no limite estudantil é menor do q a conta q ele qr pagar(debito)
 		// VERIFICAR ESSA LOGICA
@@ -59,9 +59,9 @@ public class ContaEstudantil extends Conta {
 						
 						contador++;
 						
-						this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+						this.gravarMovimentacaoDebito(i, this.getSaldo(), valor, this.getLimiteEstudantil());
 						
-						this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+						i++;
 						
 					}
 					if(opcao == 1 && saldo>0) {// aqui ele checa se tem algo no saldo, e pergunta se qr utilizar o saldo pra completar pra pagar a conta
@@ -77,9 +77,9 @@ public class ContaEstudantil extends Conta {
 								
 								contador++;
 								
-								this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+								this.gravarMovimentacaoDebito(i, this.getSaldo(), valor, this.getLimiteEstudantil());
 								
-								this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+								i++;
 								
 							}
 							else {// aqui se você recusar a usar o saldo que tem, ele checa se a conta é maior que o limite estudantil e bloqueia o débito se for
@@ -92,9 +92,9 @@ public class ContaEstudantil extends Conta {
 									this.setLimiteEstudantil(this.getLimiteEstudantil() - valor);
 									contador++;
 									
-									this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+									this.gravarMovimentacaoDebito(i, this.getSaldo(), valor, this.getLimiteEstudantil());
 									
-									this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+									i++;
 									
 								}
 								
@@ -109,14 +109,14 @@ public class ContaEstudantil extends Conta {
 			}
 	}
 	
-	/*@Override
+	@Override
 	public void menuPerfil() {
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
 		
 		int opcao;
 		int valor = 0;
-		//int i = 0;
+		/*int i = 0;*/
 		
 		// MENU | PERFIL DE CONTA
 		System.out.println("Ola, seja bem vindo ao BBBank - G5");
@@ -189,9 +189,9 @@ public class ContaEstudantil extends Conta {
 					
 					//this.gravarMovimentacaoConta(i, this.getSaldo());
 					
-					//this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
+					/*this.gravarMovimentacaoDebito(i, this.getSaldo(), valor);
 					
-					//i++;
+					i++;*/
 					
 					System.out.println();
 				break;
@@ -221,13 +221,13 @@ public class ContaEstudantil extends Conta {
 			
 		}while(opcao != '0');
 		
-		//System.out.println("Movimentacao Mensal");
-		//for(int j = 0; j < this.getMovimento().length; j++) {
-		//	System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
-		//	System.out.println();
-		//}
+		/*System.out.println("Movimentacao Mensal");
+		for(int j = 0; j < this.getMovimento().length; j++) {
+			System.out.print("Movimentacao "+ (j + 1) +": "+ this.getMovimento()[j]);
+			System.out.println();
+		}*/
 		
 		this.listarMovimentacoesConta();
 	
-	}*/
+	}
 }
