@@ -43,6 +43,10 @@ public class ContaPoupanca extends Conta {
 			
 			System.out.println("Saldo atual R$ " + this.getSaldo());
 			
+			this.gravarMovimentacaoCredito(this.getContarMovimentacao(), this.getSaldo());
+			
+			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+			
 		}else {
 			System.out.println("Seu saldo atual é R$" + this.getSaldo());
 			System.out.println("Siga para o próximo passo. Tenha um ótimo dia.");

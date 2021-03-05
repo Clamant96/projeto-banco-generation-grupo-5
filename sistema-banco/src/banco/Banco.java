@@ -1,5 +1,8 @@
 package banco;
 
+/*import java.util.ArrayList;
+import java.util.List;*/
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,6 +13,8 @@ public class Banco {
 		
 		Random aleatorio = new Random();
 		Scanner entradaDados = new Scanner(System.in);
+		
+		//List<Conta> conta = new ArrayList<>();
 
 		int opcao;
 		int valor = 0;
@@ -59,6 +64,7 @@ public class Banco {
 					/* =================================== */
 					
 					ContaPoupanca cp = new ContaPoupanca(numero, cpf, aniversarioPoupanca);
+					//conta.add(new ContaPoupanca(numero, cpf, aniversarioPoupanca));
 					
 					opcaoPerfil = '0';
 					valor = 0;
@@ -255,7 +261,6 @@ public class Banco {
 				                	opcaoPerfil = entradaDados.next().toUpperCase().charAt(0);
 				                    
 				                    System.out.println();
-				                    //System.out.println("Valor de opcao: "+ opcao);
 				                    
 				                    if(opcaoPerfil != 'S' && opcao != 'N'){ 
 				                    	System.out.println("Opcao invalida!");

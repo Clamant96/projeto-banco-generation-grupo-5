@@ -10,7 +10,7 @@ public abstract class Conta {
 	private boolean ativa;
 	private int contarMovimentacao = 0;
 	
-	private String[] movimento = new String[2];
+	private String[] movimento = new String[10];
 	
 	Random aleatorio = new Random();
 	
@@ -160,6 +160,10 @@ public abstract class Conta {
 	
 	public void gravarMovimentacaoCredito(int i, double saldo, double credito, double limite) {
 		this.movimento[i] = "(+)Credito R$ "+ Double.toString(credito) +" Saldo R$ "+ Double.toString(Math.round(saldo)) +" Limite R$ "+ Double.toString(Math.round(limite));
+	}
+	
+	public void gravarMovimentacaoCredito(int i, double saldo) {
+		this.movimento[i] = "(+)Credito R$ "+ Double.toString(Math.round(saldo) * 0.05) +" Reajuste Saldo R$ "+ Double.toString(Math.round(saldo));
 	}
 	
 	/* ===================================== */
