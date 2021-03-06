@@ -49,10 +49,11 @@ public class ContaCorrente extends Conta{
 			
 			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), debitar);
 			
+			//i++;
 			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
 			
 		}else {
-			System.out.printf("O valor R$ %.2f que voce deseja sacar e invalido\n", debitar);
+			System.out.printf("O valor R$ %f que voce deseja sacar e invalido\n", debitar);
 			System.out.println();
 		}
 	}
