@@ -34,17 +34,20 @@ public class ContaEspecial extends Conta{
 		super.debito(debitar, limite);
 		
 		if(this.getSaldo() < 0 && debitar <= limite) {
-			this.setLimite(this.getSaldo() + this.getLimite());
+			//this.setLimite(this.getSaldo() + this.getLimite());
 			
 			System.out.println("Voce esta utilizando seu limite de credito!");
 			System.out.printf("Saque de R$ %.2f realizado com sucesso!! \n", debitar);
 			
 			System.out.println();
 			
+			// consome o limite de credito
+			System.out.printf("Saldo limite R$ %.2f\n", this.usarLimite(this.getSaldo()));
+			
 			this.ajusteSaldo(0);
 			
 			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
-			System.out.printf("Saldo limite R$ %.2f", this.getLimite());
+			//System.out.printf("Saldo limite R$ %.2f", this.getLimite());
 			System.out.println();
 			
 			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), debitar, this.getLimite());
@@ -63,6 +66,13 @@ public class ContaEspecial extends Conta{
 			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
 			
 		}
+		
+	}
+	
+	public double usarLimite(double debitar) {
+		this.setLimite(debitar + this.getLimite());
+		
+		return this.getLimite();
 		
 	}
 }
