@@ -299,7 +299,10 @@ public class Banco {
 						                
 						                System.out.println("Taloes pedidos ate o momento: "+ cc.getContadorTalao());
 						                    
-						            } else {
+						            }else if(cc.getContadorTalao() > 2){
+						            	System.out.println("Voce ja solicitou todos os taloes disponiveis no mes!");
+						            	
+						            }else {
 						                System.out.println("Saldo Atual: " + cc.getSaldo());
 
 						            }
@@ -354,7 +357,7 @@ public class Banco {
 								valor = entradaDados.nextInt();*/
 								
 								try {
-									System.out.println("Quanto voce deseja depositar? ");
+									System.out.println("Quanto voce deseja sacar? ");
 									System.out.print("R$ ");
 									valor = entradaDados.nextInt();
 
@@ -412,8 +415,14 @@ public class Banco {
 					        	if(opcaoPerfil == 'S' && cc.getContadorTalao() < 3) {
 					                cc.pedeTalao();
 					                System.out.println("Taloes pedidos ate o momento: "+ cc.getContadorTalao());
+					                
+					                if(cc.getContadorTalao() == 3){
+					                	System.out.println();
+						            	System.out.println("Voce ja solicitou todos os taloes disponiveis no mes!");
+						            	
+						            }
 					                    
-					            } else {
+					            }else {
 					                System.out.println("Saldo Atual: " + cc.getSaldo());
 					                opcaoPerfil = 'N';
 					            }
@@ -428,7 +437,7 @@ public class Banco {
 				                cc.pedeTalao();
 				                System.out.println("Taloes pedidos ate o momento: "+ cc.getContadorTalao());
 				                    
-				            } else {
+				            }else {
 				                System.out.println("Saldo Atual: " + cc.getSaldo());
 				                opcaoPerfil = 'N';
 				            }
