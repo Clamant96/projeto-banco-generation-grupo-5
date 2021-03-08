@@ -33,11 +33,6 @@ public class ContaEspecial extends Conta{
 	public void debito(double debitar, double limite) {
 		super.debito(debitar, limite);
 		
-		/*if(debitar < 0) {
-			System.out.printf("O R$ %.2f valor nao pode ser negativo", debito);
-			
-		}else */
-		
 		if(this.getSaldo() < 0 && debitar <= limite) {
 			//this.setLimite(this.getSaldo() + this.getLimite());
 			
@@ -69,30 +64,6 @@ public class ContaEspecial extends Conta{
 			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), debitar);
 			
 			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
-			
-		}else if(debitar <= (limite + this.getSaldo())) {
-			this.saldo = this.getSaldo() - debitar;
-			
-			System.out.println("Voce esta utilizando seu limite de credito!");
-			System.out.printf("Saque de R$ %.2f realizado com sucesso!! \n", debitar);
-			
-			System.out.println();
-			
-			// consome o limite de credito
-			System.out.printf("Saldo limite R$ %.2f\n", this.usarLimite(this.getSaldo()));
-			
-			this.ajusteSaldo(0);
-			
-			System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
-			//System.out.printf("Saldo limite R$ %.2f", this.getLimite());
-			System.out.println();
-			
-			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), debitar, this.getLimite());
-			
-			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
-		
-		}else if(debitar > limite) {
-			System.out.println("O valor desejado ultrapassa seu limite de credito mensal.");
 			
 		}
 		

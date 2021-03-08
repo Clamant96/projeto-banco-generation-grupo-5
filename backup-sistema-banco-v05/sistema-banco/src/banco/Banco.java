@@ -563,7 +563,7 @@ public class Banco {
 								valor = entradaDados.nextInt();*/
 								
 								try {
-									System.out.println("Quanto voce deseja sacar? ");
+									System.out.println("Quanto voce deseja depositar? ");
 									System.out.print("R$ ");
 									valor = entradaDados.nextInt();
 

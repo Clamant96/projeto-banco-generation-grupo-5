@@ -129,7 +129,7 @@ public abstract class Conta {
 			this.saldo = this.getSaldo() - debitar;
 			
 		}else if(debitar > limite){
-			//System.out.println("O valor desejado ultrapassa seu limite de credito mensal.");
+			System.out.println("O valor desejado ultrapassa seu limite de credito mensal.");
 			
 		}else {
 			this.saldo = this.getSaldo() - debitar;
