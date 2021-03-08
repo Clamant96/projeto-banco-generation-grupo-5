@@ -9,6 +9,7 @@ public abstract class Conta {
 	protected double saldo;
 	private boolean ativa;
 	private int contarMovimentacao = 0;
+	double result = 0;
 	
 	private String[] movimento = new String[10];
 	
@@ -77,6 +78,14 @@ public abstract class Conta {
 		return this.contarMovimentacao;
 	}
 	
+	public void setResult(double result) {
+		this.result = result;
+	}
+	
+	public double getResult() {
+		return this.result;
+	}
+	
 	/* ================================== */
 	/* PERFIL | CREDITA UM VALOS NA CONTA */
 	/* ================================== */
@@ -130,6 +139,7 @@ public abstract class Conta {
 			
 		}else if(debitar > limite){
 			//System.out.println("O valor desejado ultrapassa seu limite de credito mensal.");
+			this.setResult(this.getSaldo() - debitar);
 			
 		}else {
 			this.saldo = this.getSaldo() - debitar;

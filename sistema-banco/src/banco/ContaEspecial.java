@@ -71,7 +71,7 @@ public class ContaEspecial extends Conta{
 			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
 			
 		}else if(debitar <= (limite + this.getSaldo())) {
-			this.saldo = this.getSaldo() - debitar;
+			//this.saldo = this.getSaldo() - debitar;
 			
 			System.out.println("Voce esta utilizando seu limite de credito!");
 			System.out.printf("Saque de R$ %.2f realizado com sucesso!! \n", debitar);
@@ -79,7 +79,7 @@ public class ContaEspecial extends Conta{
 			System.out.println();
 			
 			// consome o limite de credito
-			System.out.printf("Saldo limite R$ %.2f\n", this.usarLimite(this.getSaldo()));
+			System.out.printf("Saldo limite R$ %.2f\n", this.usarLimite(this.getResult()));
 			
 			this.ajusteSaldo(0);
 			
